@@ -36,7 +36,7 @@ if __name__ == '__main__':
     parser.add_argument('--epochs', default=500, type=int, help='number of training epochs')
     parser.add_argument('--loss', default='ce', type=str, help='loss type',
                         choices=['ce','mse','mix'])
-    parser.add_argument('--lamda', default=0.05, type=float, help='weight of mse loss')
+    parser.add_argument('--lambda', default=0.05, type=float, help='weight of mse loss')
     parser.add_argument('--show_fr', action='store_true', help='store firing rate')
     parser.add_argument('--mp_statistic', action='store_true', help='store membrane potential')
     parser.add_argument('--neuron', default='IF', type=str, help='snn neuron',
@@ -195,7 +195,7 @@ if __name__ == '__main__':
             elif args.loss == 'mse':
                 loss = criterion_mse(outputs,label_one_hot)
             elif args.loss == 'mix':
-                loss = args.lamda*criterion_mse(outputs,label_one_hot)+(1-args.lamda)*criterion_ce(outputs, labels)
+                loss = args.lambda*criterion_mse(outputs,label_one_hot)+(1-args.lambda)*criterion_ce(outputs, labels)
 
             if (i + 1) % 50 == 0:
                 print("Loss: ", loss)
