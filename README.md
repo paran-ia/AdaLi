@@ -12,7 +12,7 @@ This repository is the official PyTorch implementation of the paper: Towards Ada
 
 # Training
 
-The boundary values need to be custom-modified in the config.py file. The following is an example of training with the AdaLi method. If other methods are used and no adaptive function is required, the --adaptive parameter should be removed. If training with a combined loss function, please turn on the --mix and --lamda parameters.
+The boundary values need to be custom-modified in the config.py file. The following is an example of training with the AdaLi method. If other methods are used and no adaptive function is required, the --adaptive parameter should be removed. If training with a combined loss function, please turn on the --mix and --lambda parameters.
 
 ## CIFAR-10
 
